@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * Store details of club memberships.
  * 
@@ -15,7 +16,7 @@ public class Club
     public Club()
     {
         // Initialise any fields here ...
-        
+        clubMembers = new ArrayList<>();
     }
 
     /**
@@ -50,4 +51,18 @@ public class Club
         }
         return joinedInMonth;
     }
+    
+    /**
+    * Remove from the club's collection all members who
+    * joined in the given month, and return them stored
+    * in a separate collection object.
+    * @param month The month of the membership.
+    * @param year The year of the membership.
+    * @return The members who joined in the given month and year.
+    */
+    public ArrayList<Membership> purge(int month, int year){
+        
+        return null;
+    }
+    
 }
