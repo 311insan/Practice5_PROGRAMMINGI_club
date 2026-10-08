@@ -24,6 +24,7 @@ public class Club
      */
     public void join(Membership member)
     {
+        clubMembers.add(member);
     }
 
     /**
@@ -33,5 +34,20 @@ public class Club
     public int numberOfMembers()
     {
         return clubMembers.size();
+    }
+    /**
+    * Determine the number of members who joined in the
+    * given month.
+    * @param month The month we are interested in.
+    * @return The number of members who joined in that month.
+    */
+    public int joinedInMonth(int month){
+        int joinedInMonth = 0;
+        for (Membership member : clubMembers){
+            if (member.getMonth() == month){
+                joinedInMonth++;
+            }
+        }
+        return joinedInMonth;
     }
 }
