@@ -65,7 +65,7 @@ public class Club
         Iterator<Membership> i = clubMembers.iterator();
         int currentYear = 2026; //assumed currentYear
         int currentMonth = 10; //assumed currentMonth
-        if ((month > 0 || month < 12) && year < currentYear && month < currentMonth){
+        if ((month > 0 || month <= 12) && year < currentYear && month < currentMonth){
             while(i.hasNext()){
                 Membership member = i.next();
                 if(month == member.getMonth() && year == member.getYear()){
