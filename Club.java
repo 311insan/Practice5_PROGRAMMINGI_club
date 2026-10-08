@@ -61,8 +61,28 @@ public class Club
     * @return The members who joined in the given month and year.
     */
     public ArrayList<Membership> purge(int month, int year){
-        
-        return null;
+        ArrayList<Membership> purged = new ArrayList<>();
+        Iterator<Membership> i = clubMembers.iterator();
+        int currentYear = 2026; //assumed currentYear
+        int currentMonth = 10; //assumed currentMonth
+        if ((month > 0 || month < 12) && year < currentYear && month < currentMonth){
+            while(i.hasNext()){
+                Membership member = i.next();
+                if(month == member.getMonth() && year == member.getYear()){
+                    purged.add(member);
+                    i.remove();
+                }
+            }
+            return purged;
+        } else if (year > currentYear && month <= currentMonth){
+            System.out.println("INVALID YEAR");
+            return null;
+        } else if (month > currentMonth && year <= currentYear) {
+            System.out.println("INVALID MONTH");
+            return null;
+        } else {
+            System.out.println("INVALID YEAR AND MONTH");
+            return null;
+        }
     }
-    
 }
